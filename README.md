@@ -30,12 +30,12 @@ search is plain token-overlap matching against your own scraped data.
 
 | Site | itemCard | itemPage |
 |---|---|---|
-| pornhub.com | done | done |
+| site.com | done | done |
 | site 2 | pending | pending |
 | site 3 | pending | pending |
 
 To add a site, edit `siteConfigs.js`: add a hostname key with the same
-shape as the `pornhub.com` block, plus the matching `host_permissions`
+shape as the `site.com` block, plus the matching `host_permissions`
 and `content_scripts.matches` entries in `manifest.json`.
 
 ## Loading the extension
