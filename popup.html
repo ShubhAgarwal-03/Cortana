@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Taste Profile</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="recommend">Recommend</button>
+    <button class="tab-btn" data-tab="find">Find it</button>
+    <button class="tab-btn" data-tab="interests">Interests</button>
+    <button class="tab-btn" data-tab="log">Log</button>
+  </div>
+
+  <section id="tab-recommend" class="tab-panel active">
+    <button id="refreshRecs">Refresh recommendations</button>
+    <ul id="recsList" class="item-list"></ul>
+  </section>
+
+  <section id="tab-find" class="tab-panel">
+    <input id="findInput" type="text" placeholder="describe what you remember (e.g. a name)" />
+    <button id="findBtn">Search</button>
+    <ul id="findList" class="item-list"></ul>
+  </section>
+
+  <section id="tab-interests" class="tab-panel">
+    <textarea id="interestsInput" placeholder="one interest per line"></textarea>
+    <button id="saveInterests">Save interests</button>
+    <div id="interestsStatus" class="status"></div>
+  </section>
+
+  <section id="tab-log" class="tab-panel">
+    <div id="statsLine" class="status"></div>
+    <ul id="logList" class="log-list"></ul>
+    <div class="log-actions">
+      <button id="exportBtn">Export data</button>
+      <button id="clearBtn" class="danger">Clear local data</button>
+    </div>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>

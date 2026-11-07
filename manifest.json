@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Taste Profile",
+  "version": "0.1.0",
+  "description": "Local-only, reactive content recommender for your own browsing on supported sites. Nothing leaves your machine.",
+  "permissions": ["storage", "scripting", "activeTab", "downloads", "bookmarks", "tabs"],
+  "host_permissions": [
+    "*://www.pornhub.com/*",
+    "*://www.pornhub.org/*",
+    "*://noodlemagazine.com/*",
+    "*://www.fpo.xxx/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.pornhub.com/*",
+        "*://www.pornhub.org/*",
+        "*://noodlemagazine.com/*",
+        "*://www.fpo.xxx/*"
+      ],
+      "js": ["siteConfigs.js", "scraper.js", "activityTracker.js", "contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
